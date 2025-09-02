@@ -47,39 +47,60 @@
 
 
 
-class Wallet:
-    def __init__(self,balance:float=0):
-        self.__balance=balance
+# class Wallet:
+#     def __init__(self,balance:float=0):
+#         self.__balance=balance
 
 
 
-    def deposit(self,amount:float):
-        if amount<=0:
-            raise ValueError("Deposit amount must be positive")
+#     def deposit(self,amount:float):
+#         if amount<=0:
+#             raise ValueError("Deposit amount must be positive")
         
-        self.__balance+=amount
+#         self.__balance+=amount
 
 
-    def withdraw(self,amount:float):
-        if amount<=0:
-            raise ValueError("withdraw amoutn must be postitive")
+#     def withdraw(self,amount:float):
+#         if amount<=0:
+#             raise ValueError("withdraw amoutn must be postitive")
         
-        self.__balance-=amount
+#         self.__balance-=amount
 
 
-    def get_balance(self)->float:
-        return self.__balance
+#     def get_balance(self)->float:
+#         return self.__balance
     
 
 
 
-w=Wallet(1000)
+# w=Wallet(1000)
 
-w.deposit(500)
-w.withdraw(200)
+# w.deposit(500)
+# w.withdraw(200)
 
 
-print(w.get_balance())
+# print(w.get_balance())
+
+
+
+class Discount:
+    def __init__(self,percent:float):
+        self.percent=percent
+
+    @property
+    def percent(self):
+        return self._percent
+    
+    @percent.setter
+    def percent(self,value:float):
+        if not (0<=value<=100):
+            raise ValueError("Percent must be between 0 and 100")
+        self._percent=value
+
+
+d=Discount(10)
+d.percent=20
+print(d.percent)
 
 
 
