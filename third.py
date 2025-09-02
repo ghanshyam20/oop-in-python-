@@ -82,25 +82,53 @@
 # print(w.get_balance())
 
 
+#preperties let you keep attributs sytax with validation
+# class Discount:
+#     def __init__(self,percent:float):
+#         self.percent=percent
 
-class Discount:
-    def __init__(self,percent:float):
-        self.percent=percent
-
-    @property
-    def percent(self):
-        return self._percent
+#     @property
+#     def percent(self):
+#         return self._percent
     
-    @percent.setter
-    def percent(self,value:float):
-        if not (0<=value<=100):
-            raise ValueError("Percent must be between 0 and 100")
-        self._percent=value
+#     @percent.setter
+#     def percent(self,value:float):
+#         if not (0<=value<=100):
+#             raise ValueError("Percent must be between 0 and 100")
+#         self._percent=value
 
 
-d=Discount(10)
-d.percent=20
-print(d.percent)
+# d=Discount(10)
+# d.percent=20
+# print(d.percent)
+
+
+
+# Goal 4 :Alternate constructor from string "title |author"
+
+
+# class Book:
+#     def __init__(self,title,author):
+#         self.title,self.author=title,author
+
+#     @classmethod
+#     def from_str(cls,s:str):
+#         title,author=s.split("|",1)
+#         return cls(title.strip(),author.strip())
+    
+
+
+# b=Book.from_str("clean code | Ghan")
+
+# print(b.title,b.author)
+
+
+
+
+
+
+
+
 
 
 
